@@ -11,15 +11,15 @@
 }
 
 .rightsidebar {
-    width: 150px;
+    width: 550px;
     background-color: rgba(243, 152, 152, 0.87);
 
 }
 
-.secondRightSidebar {
+.secondRightSidebar {    
     width: 250px;
-    background-color: rgba(243, 152, 152, 0.87);
-
+    background-color: rgba(53, 231, 67, 0.87);
+    margin-top: 64px;
 }
 
 
@@ -30,4 +30,3 @@ mat-drawer-container {
 mat-drawer-content {
     padding:20px;
 }
-

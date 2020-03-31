@@ -1,5 +1,4 @@
-<app-header (toogleSIdeBarForMe)="leftSideBarToggler()" 
-    (toogleRigthSideBarForMe)="rightSideBarToggler()" 
+<app-header (toogleSIdeBarForMe)="leftSideBarToggler()" (toogleRigthSideBarForMe)="rightSideBarToggler()"
     (toogleSecondRigthSideBarForMe)="secondRightSideBarToggler()"></app-header>
 
 <mat-drawer-container>
@@ -8,20 +7,20 @@
         <app-left-side-bar></app-left-side-bar>
     </mat-drawer>
 
-    <mat-drawer-content>
-        <app-dashboard></app-dashboard>
+    <mat-drawer-content fxFlexmxs="100vw" fxFlex.gt-sm="80%">
+        MainContent
     </mat-drawer-content>
 
-    <mat-drawer  class="rightsidebar" mode="side" [opened]="rightSideBarOpen" position="end">
+    <mat-drawer class="rightsidebar" mode="right side" [opened]="rightSideBarOpen" position="end">
         <app-right-side-bar></app-right-side-bar>
-    </mat-drawer>  
-    
-    <mat-drawer  class="secondRightsidebar" mode="side" [opened]="secondRightSideBarOpen" position="end">
-        <app-second-right-side-bar></app-second-right-side-bar>
-    </mat-drawer>  
-
+    </mat-drawer>
 
 </mat-drawer-container>
+
+<mat-drawer class="secondRightSidebar" [opened]="secondRightSideBarOpen" position="end">
+    <app-second-right-side-bar></app-second-right-side-bar>
+</mat-drawer>
+
 
 
 <!-- <app-footer></app-footer> -->
