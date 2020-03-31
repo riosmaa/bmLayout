@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
 
-	public leftSideBarOpen:boolean = true;
-	public rightSideBarOpen:boolean = false;
-	public secondRightSideBarOpen:boolean = false;
+	public leftSideBarOpen: boolean = true;
+	public rightSideBarOpen: boolean = false;
+	public secondRightSideBarOpen: boolean = false;
 
 
 	constructor() { }
@@ -21,11 +21,26 @@ export class DefaultComponent implements OnInit {
 	}
 
 	rightSideBarToggler() {
-		this.rightSideBarOpen = !this.rightSideBarOpen;
+		if (this.secondRightSideBarOpen = true) {
+			this.secondRightSideBarOpen = false;
+			this.secondRightSideBarOpen = true;
+		}
+		else {
+			this.secondRightSideBarOpen = true;
+		}
 	}
 
+
 	secondRightSideBarToggler() {
-		this.secondRightSideBarOpen = !this.secondRightSideBarOpen;
+		if (this.rightSideBarOpen = true) {
+			this.rightSideBarOpen = false;
+			this.secondRightSideBarOpen = true;
+		}
+		else {
+			this.secondRightSideBarOpen = true;
+		}
 	}
 
 }
+
+
