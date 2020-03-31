@@ -27,9 +27,9 @@ export class DefaultComponent implements OnInit {
 		}
 		else {
 			this.rightSideBarOpen = true;
+			this.secondRightSideBarOpen = false;
 		}
 	}
-
 
 	secondRightSideBarToggler() {
 		if (this.rightSideBarOpen = true) {
@@ -38,6 +38,8 @@ export class DefaultComponent implements OnInit {
 		}
 		else {
 			this.secondRightSideBarOpen = true;
+			this.rightSideBarOpen = false;
+
 		}
 	}
 
