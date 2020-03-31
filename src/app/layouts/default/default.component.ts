@@ -9,6 +9,7 @@ export class DefaultComponent implements OnInit {
 
 	public leftSideBarOpen:boolean = true;
 	public rightSideBarOpen:boolean = false;
+	public secondRightSideBarOpen:boolean = false;
 
 
 	constructor() { }
@@ -21,6 +22,10 @@ export class DefaultComponent implements OnInit {
 
 	rightSideBarToggler() {
 		this.rightSideBarOpen = !this.rightSideBarOpen;
+	}
+
+	secondRightSideBarToggler() {
+		this.secondRightSideBarOpen = !this.secondRightSideBarOpen;
 	}
 
 }

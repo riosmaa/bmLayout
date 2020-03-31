@@ -34,19 +34,26 @@
                     </button>
                 </li>
             </ul>
+            <ul>
+                <li>
+                    <button mat-icon-button (click)="toggleSecondRightSideBar()">
+                        <mat-icon>menu_open</mat-icon>
+                    </button>
+                </li>
+            </ul>
             <ul fxLayout="row" fxLayoutGap="5px">
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
                         <mat-icon>person_outline</mat-icon>
                     </button>
-                    <mat-menu #menu="matMenu">                        
-                         <button mat-menu-item  onClick="window.open('//google.com')">
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item onClick="window.open('//google.com')">
                             <mat-icon>exit_to_app</mat-icon>
-                            <span>Έξοδος</span>                           
+                            <span>Έξοδος</span>
                         </button>
                     </mat-menu>
                 </li>
             </ul>
-                    </div>
+        </div>
     </mat-toolbar-row>
 </mat-toolbar>

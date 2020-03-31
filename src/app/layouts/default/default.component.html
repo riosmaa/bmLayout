@@ -1,13 +1,10 @@
-<app-header (toogleSIdeBarForMe)="leftSideBarToggler()" (toogleRigthSideBarForMe)="rightSideBarToggler()" ></app-header>
+<app-header (toogleSIdeBarForMe)="leftSideBarToggler()" 
+    (toogleRigthSideBarForMe)="rightSideBarToggler()" ></app-header>
 
 <mat-drawer-container>
 
     <mat-drawer class="leftsidebar" mode="side" [opened]="leftSideBarOpen">
-        <app-left-side-bar>
-            <widget1></widget1>
-
-            <widget2></widget2>
-        </app-left-side-bar>
+        <app-left-side-bar></app-left-side-bar>
     </mat-drawer>
 
     <mat-drawer-content>
@@ -16,7 +13,12 @@
 
     <mat-drawer  class="rightsidebar" mode="side" [opened]="rightSideBarOpen" position="end">
         <app-right-side-bar></app-right-side-bar>
-    </mat-drawer>
+    </mat-drawer>  
+    
+    <mat-drawer  class="secondRightsidebar" mode="side" [opened]="secondRightSideBarOpen" position="end">
+        <app-second-right-side-bar></app-second-right-side-bar>
+    </mat-drawer>  
+
 
 </mat-drawer-container>
 

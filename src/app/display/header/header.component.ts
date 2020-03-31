@@ -10,6 +10,9 @@ export class HeaderComponent implements OnInit {
   @Output() toogleSIdeBarForMe: EventEmitter<any> = new EventEmitter();
 
   @Output() toogleRigthSideBarForMe: EventEmitter<any> = new EventEmitter();
+
+  @Output() toogleSecondRigthSideBarForMe: EventEmitter<any> = new EventEmitter();
+
   
   constructor() { }
 
@@ -22,6 +25,10 @@ export class HeaderComponent implements OnInit {
 
   toggleRightSideBar(){
     this.toogleRigthSideBarForMe.emit();
+  }
+
+  toggleSecondRightSideBar(){
+    this.toogleSecondRigthSideBarForMe.emit();
   }
   
 

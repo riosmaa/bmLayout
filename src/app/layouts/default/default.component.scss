@@ -6,7 +6,7 @@
 
 .leftsidebar {
     width: 200px;
-    background-color: rgba(152, 217, 243, 0.87);
+    background-color: aqua;
 
 }
 
@@ -15,6 +15,13 @@
     background-color: rgba(243, 152, 152, 0.87);
 
 }
+
+.secondRightSidebar {
+    width: 250px;
+    background-color: rgba(243, 152, 152, 0.87);
+
+}
+
 
 mat-drawer-container {
     height: 100%;
