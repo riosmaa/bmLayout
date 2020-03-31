@@ -21,26 +21,17 @@ export class DefaultComponent implements OnInit {
 	}
 
 	rightSideBarToggler() {
+		this.rightSideBarOpen = !this.rightSideBarOpen;
 		if (this.secondRightSideBarOpen = true) {
-			this.secondRightSideBarOpen = false;
-			this.rightSideBarOpen = true;
-		}
-		else {
-			this.rightSideBarOpen = true;
-			this.secondRightSideBarOpen = false;
+			this.secondRightSideBarOpen = false;	
 		}
 	}
 
-	secondRightSideBarToggler() {
-		if (this.rightSideBarOpen = true) {
-			this.rightSideBarOpen = false;
-			this.secondRightSideBarOpen = true;
-		}
-		else {
-			this.secondRightSideBarOpen = true;
-			this.rightSideBarOpen = false;
-
-		}
+	secondRightSideBarToggler() {		
+			this.secondRightSideBarOpen = !this.secondRightSideBarOpen;
+			if (this.rightSideBarOpen = true) {
+				this.rightSideBarOpen = false;
+				}
 	}
 
 }
