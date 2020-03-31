@@ -23,10 +23,10 @@ export class DefaultComponent implements OnInit {
 	rightSideBarToggler() {
 		if (this.secondRightSideBarOpen = true) {
 			this.secondRightSideBarOpen = false;
-			this.secondRightSideBarOpen = true;
+			this.rightSideBarOpen = true;
 		}
 		else {
-			this.secondRightSideBarOpen = true;
+			this.rightSideBarOpen = true;
 		}
 	}
 
