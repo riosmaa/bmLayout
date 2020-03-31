@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+        <a class="infodim-logo" target="_blank" href="http://infodim.gr/el/">
+            <img class="navbar-brand-full" src="assets/infodim_logo.png" width="89" height="30" alt="infodim_logo"
+                alt="infodim_logo">
+        </a>
+
+        <button mat-icon-button (click)="toggleSideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-start">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>done_all</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>today</mat-icon>
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul>
+                <li>
+                    <button mat-icon-button (click)="toggleRightSideBar()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                </li>
+            </ul>
+            <ul fxLayout="row" fxLayoutGap="5px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">                        
+                         <button mat-menu-item  onClick="window.open('//google.com')">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <span>Έξοδος</span>                           
+                        </button>
+                    </mat-menu>
+                </li>
+            </ul>
+                    </div>
+    </mat-toolbar-row>
+</mat-toolbar>

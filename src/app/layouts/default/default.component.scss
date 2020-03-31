@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.leftsidebar {
+    width: 200px;
+    background-color: rgba(152, 217, 243, 0.87);
+
+}
+
+.rightsidebar {
+    width: 150px;
+    background-color: rgba(243, 152, 152, 0.87);
+
+}
+
+mat-drawer-container {
+    height: 100%;
+}
+
+mat-drawer-content {
+    padding:20px;
+}
+

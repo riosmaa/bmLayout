@@ -1,0 +1,37 @@
+<mat-nav-list>
+
+    <h3  class="matHeader">
+        <mat-icon>home</mat-icon>
+        <span> RightSideBar </span>
+        
+    </h3>
+
+
+<mat-divider></mat-divider>
+
+<button mat-button [matMenuTriggerFor]="rootMenu">   
+    <mat-icon>contact_mail</mat-icon>     
+        <span>  Επικοινωνία</span>
+    </button>
+
+
+      <mat-menu #rootMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu" >  
+            <span>Needed Help</span>
+            <mat-icon>live_help</mat-icon>
+        </button>
+    </mat-menu>
+      
+      <mat-menu #subMenu="matMenu">
+        <button mat-menu-item><mat-icon>sentiment_very_satisfied</mat-icon>Ask Marios</button>
+        <button mat-menu-item><mat-icon>sentiment_very_dissatisfied</mat-icon>Ask Other</button>
+      </mat-menu>
+      
+     
+
+<mat-divider></mat-divider>
+
+
+
+
+</mat-nav-list>
