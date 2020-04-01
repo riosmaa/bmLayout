@@ -5,10 +5,6 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { RouterModule } from '@angular/router';
 import { DisplayModule } from 'src/app/display/display.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatCardModule } from '@angular/material/card';
-
 
 @NgModule({
   declarations: [
@@ -19,10 +15,9 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     RouterModule,
     DisplayModule,
-    MatSidenavModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCardModule
+    MatSidenavModule
+    
+
   ]
 })
 

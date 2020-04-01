@@ -4,6 +4,12 @@
     height: 100%;
 }
 
+
+mat-drawer-container {
+    height: 100%;
+}
+
+
 .leftsidebar {
     width: 200px;
     background-color: aqua;
@@ -11,7 +17,7 @@
 }
 
 .rightsidebar {
-    width: 550px;
+    width: 800px;
     background-color: rgba(243, 152, 152, 0.87);
 
 }
@@ -20,13 +26,7 @@
     width: 250px;
     background-color: rgba(53, 231, 67, 0.87);
     margin-top: 64px;
+    position: fixed;
 }
 
 
-mat-drawer-container {
-    height: 100%;
-}
-
-mat-drawer-content {
-    padding:20px;
-}
