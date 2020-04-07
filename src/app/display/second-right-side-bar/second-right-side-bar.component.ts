@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-second-right-side-bar',
   templateUrl: './second-right-side-bar.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondRightSideBarComponent implements OnInit {
 
+
+  banks = ['Πειραιώς', 'Εθνική' , 'Eurobank'];
+
+
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+ 
 
 }

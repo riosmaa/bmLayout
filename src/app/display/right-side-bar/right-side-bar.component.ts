@@ -11,8 +11,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class RightSideBarComponent implements OnInit {
 
-  displayedColumns: string[] = ['select','position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['select','id', 'CIF', 'BorrowerName'];
+  dataSource = new MatTableDataSource<PeriodicElement>(CIFS);
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   constructor() { }
@@ -38,9 +38,7 @@ export class RightSideBarComponent implements OnInit {
 
   /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
+    this.isAllSelected() ? this.selection.clear() : this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
   /** The label for the checkbox on the passed row */
@@ -48,40 +46,40 @@ export class RightSideBarComponent implements OnInit {
     if (!row) {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.id + 1}`;
   }
 
 }
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  
+  id: number;
+  CIF: string; 
+  BorrowerName: string; 
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-  { position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na' },
-  { position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg' },
-  { position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al' },
-  { position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si' },
-  { position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P' },
-  { position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S' },
-  { position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl' },
-  { position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar' },
-  { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
-  { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
+const CIFS: PeriodicElement[] = [
+  { id: 1,  CIF: 'PRT9064026' , BorrowerName: 'H.S.U HELLENIC SUPPLY UNION A.E' },
+  { id: 2,  CIF: 'EYV9140682' , BorrowerName: 'TERRAKAT M ΕΠΕ ΣΑΜΑΡΑΣ ΙΩΑΝΝΗΣ ΜΟΝΟΠΡ. ΕΠΕ' },
+  { id: 3,  CIF: 'LLB9118291' , BorrowerName: 'ΝΙΚΗ ΒΑΜΒΟΥΚΟΥ' },
+  { id: 4,  CIF: 'PAN9057149' , BorrowerName: 'ΒΑΣΙΛΙΚΗ ΚΙΣΚΗΡΑ' },
+  { id: 5,  CIF: 'ATE6171401' , BorrowerName: 'ΒΑΙΟΣ ΚΟΥΤΟΒΑΣ' },
+  { id: 6,  CIF: 'ACH9153265' , BorrowerName: 'ΓΕΩΡΓΙΟΣ ΠΑΠΟΥΛΙΑΣ' },
+  { id: 7,  CIF: 'ATE5025381' , BorrowerName: 'ΘΕΟΔΩΡΑ ΠΑΠΑΜΑΥΡΟΥΔΗ' },
+  { id: 8,  CIF: 'TXT9024358' , BorrowerName: ' ΓΕΩΡΓΙΟΣ ΚΟΡΔΑΛΗΣ ΚΑΙ ΣΙΑ ΟΕ' },
+  { id: 9,  CIF: 'LLB9116861' , BorrowerName: 'ΕΥΣΤΡΑΤΙΟΣ ΨΩΜΟΣ' },
+  { id: 10, CIF: 'ATE7676698' , BorrowerName: 'ΣΟΦΙΑ ΑΒΡΑΜΙΔΟΥ' },
+  { id: 11, CIF: 'PEL9124918' , BorrowerName: '- ΠΑΠΑΓΙΑΝΝΟΠΟΥΛΟΣ CARGO ΑΕ' },
+  { id: 12, CIF: 'DOD9148038' , BorrowerName: 'ΣΕΒΑΣΤΗ ΜΑΚΡΗ'},
+  { id: 13, CIF: 'PRT9062544' , BorrowerName: 'ΑΛΕΞΑΝΔΡΟΣ ΚΕΛΕΣΙΔΗΣ' },
+  { id: 14, CIF: 'TXT9022496' , BorrowerName: 'ΜΑΡΙΑ ΒΑΡΒΕΤΑΚΗ' },
+  { id: 15, CIF: 'PRB9091313' , BorrowerName: 'ΓΕΩΡΓΙΟΣ ΣΤΑΜΑΤΙΑΔΗΣ' },
+  { id: 16, CIF: 'TXT9015441' , BorrowerName: 'ΕΜΜΑΝΟΥΗΛ ΣΟΥΦΑΛΙΔΑΚΗΣ'},
+  { id: 17, CIF: 'ATE5847181' , BorrowerName: 'ΑΘΑΝΑΣΙΟΣ ΚΑΡΟΠΛΕΣΗΣ'},
+  { id: 18, CIF: 'ATE5808824' , BorrowerName: 'ΠΑΝΑΓΙΩΤΗΣ ΓΙΑΝΝΙΤΣΗΣ'},
+  { id: 19, CIF: 'ATE1301676' , BorrowerName: 'ΑΝΤΩΝΙΟΣ ΧΕΛΙΟΥΔΑΚΗΣ' },
+  { id: 20, CIF: 'TXT9004238' , BorrowerName: 'ΚΩΝΣΤΑΝΤΙΝΟΣ ΟΙΚΟΝΟΜΟΠΟΥΛΟΣ'},
 ];
 
 
