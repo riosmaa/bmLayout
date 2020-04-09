@@ -1,14 +1,14 @@
-<mat-nav-list>
+<!-- <mat-nav-list> -->
 
-    <h3  class="matHeader">
-        <mat-icon>home</mat-icon>
-        <span> RightSideBar </span>
-        
-    </h3>
+<h3 class="matHeader">
+  <mat-icon>search</mat-icon>
+  <span> Search SideBar </span>
+
+</h3>
 
 
 <mat-divider></mat-divider>
-
+<!-- 
 <button mat-button [matMenuTriggerFor]="rootMenu">   
     <mat-icon>contact_mail</mat-icon>     
         <span>  Επικοινωνία</span>
@@ -29,9 +29,69 @@
       
      
 
-<mat-divider></mat-divider>
+<mat-divider></mat-divider> -->
+
+
+<mat-tab-group animationDuration="0ms">
+
+    <mat-tab label="Search">
+
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search everything">
+      </mat-form-field>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- CIF Column -->
+        <ng-container matColumnDef="CIF">
+          <th mat-header-cell *matHeaderCellDef> CIF </th>
+          <td mat-cell *matCellDef="let element"> {{element.CIF}} </td>
+        </ng-container>
+
+        <!-- BorrowerName Column -->
+        <ng-container matColumnDef="BorrowerName">
+          <th mat-header-cell *matHeaderCellDef> BorrowerName </th>
+          <td mat-cell *matCellDef="let element"> {{element.BorrowerName}} </td>
+        </ng-container>
+      
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"(click)="selection.toggle(row)"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+
+    </mat-tab>
+
+    <mat-tab label="Find">The First Content</mat-tab>
+</mat-tab-group>
 
 
 
 
-</mat-nav-list>
+<!-- </mat-nav-list> -->

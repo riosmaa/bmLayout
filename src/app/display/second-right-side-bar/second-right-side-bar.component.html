@@ -6,61 +6,77 @@
 
     </h2>
 
-
-   <!-- <mat-divider></mat-divider>
-
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
-        <mat-icon style="font-size: 20px;height:20px;width:20px;">
-            dashboard_customize</mat-icon>
-        Dashboard
-    </a>
-
-    <mat-divider></mat-divider>
-
-
-    <button mat-button [matMenuTriggerFor]="rootMenu">
-        <mat-icon>contact_mail</mat-icon>
-        <span> Επικοινωνία</span>
-    </button>
-
-
-    <mat-menu #rootMenu="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="subMenu">
-            <span>Needed Help</span>
-            <mat-icon>live_help</mat-icon>
-        </button>
-    </mat-menu>
-
-    <mat-menu #subMenu="matMenu">
-        <button mat-menu-item>
-            <mat-icon>sentiment_very_satisfied</mat-icon>Ask Marios
-        </button>
-        <button mat-menu-item>
-            <mat-icon>sentiment_very_dissatisfied</mat-icon>Ask Other
-        </button>
-    </mat-menu>  
-
-    <mat-divider></mat-divider> -->
-
-
     <mat-expansion-panel>
         <mat-expansion-panel-header>
-            Δικαιώματα
+            Δικαιούχοι
         </mat-expansion-panel-header>
+        <section fxLayout = "column">
+            <mat-card>
+                <mat-card-content>
+                    <!-- <label>Customer Code</label> -->
+                    <mat-form-field fxLayout = "column" [style.width.px]=400>
+                        <input matInput type="text" placeholder="Customer Code">
+                        <mat-hint align="end">Not more then 11 characters long.</mat-hint>
+                    </mat-form-field>
+                    <!-- <label>Borrower surname</label> -->
+                    <mat-form-field style="padding: 20px;">
+                        <input matInput type="text" placeholder="Borrower's surname">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Bank</mat-label>
+                        <mat-select matNativeControl placeholder="Choose">
+                            <mat-option *ngFor="let bank of banks" [value]="bank">{{bank}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
 
-        <button mat-menu-item>Εισαγωγή</button>
-        <button mat-menu-item>Επεξεργασία</button>
-        <button mat-menu-item>Reports</button>
+
+                </mat-card-content>
+
+                <mat-card-actions align="center">
+                    <button mat-raised-button color="primary">Search</button>
+                    <button mat-raised-button color="warn">Clear</button>
+                </mat-card-actions>
+            </mat-card>
+        </section>
+
     </mat-expansion-panel>
 
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             Εκκρεμότητες
         </mat-expansion-panel-header>
+        <section>
+            <mat-card>
+                <mat-card-content>
+                    <!-- <label>Customer Code</label> -->
+                    <mat-form-field class="ekrMatFormField">
+                        <input matInput type="text" placeholder="Αριθμός Εκκρεμότητας">
+                        <mat-hint align="end">Not more then 11 characters long.</mat-hint>
+                    </mat-form-field>
+                    <!-- <label>Borrower surname</label> -->
+                    <mat-form-field class="ekrMatFormField">
+                        <input matInput type="text" placeholder="Borrower's surname">
+                    </mat-form-field>
+                    <mat-form-field class="ekrMatFormField">
+                        <input matInput type="date" placeholder="Ημερομηνία Εισαγωγής">
+                    </mat-form-field>
+                    <mat-form-field class="ekrMatFormField">
+                        <mat-label>Bank</mat-label>
+                        <mat-select matNativeControl placeholder="Choose">
+                            <mat-option *ngFor="let bank of banks" [value]="bank">{{bank}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
 
-        <button mat-menu-item>Εισαγωγή</button>
-        <button mat-menu-item>Επεξεργασία</button>
-        <button mat-menu-item>Reports</button>
+
+                </mat-card-content>
+
+                <mat-card-actions align="center">
+                    <button mat-raised-button color="primary">Search</button>
+                    <button mat-raised-button color="warn">Clear</button>
+                </mat-card-actions>
+            </mat-card>
+        </section>
     </mat-expansion-panel>
-    
+
+
 </mat-nav-list>

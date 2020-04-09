@@ -7,19 +7,19 @@
         <app-left-side-bar></app-left-side-bar>
     </mat-drawer>
 
-    <mat-drawer-content fxFlexmxs="100vw" fxFlex.gt-sm="80%">
+    <mat-drawer-content>
         MainContent
     </mat-drawer-content>
 
-    <mat-drawer class="rightsidebar" mode="right side" [opened]="rightSideBarOpen" position="end">
+    <mat-drawer class="rightsidebar" mode="side" [opened]="rightSideBarOpen" position="end">
         <app-right-side-bar></app-right-side-bar>
     </mat-drawer>
 
 </mat-drawer-container>
 
-<mat-drawer class="secondRightSidebar" [opened]="secondRightSideBarOpen" position="end">
+<mat-sidenav class="secondRightSidebar" [opened]="secondRightSideBarOpen" position="end">
     <app-second-right-side-bar></app-second-right-side-bar>
-</mat-drawer>
+</mat-sidenav>
 
 
 

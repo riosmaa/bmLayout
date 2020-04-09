@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+mat-drawer-container {
+    height: 100%;
+}
+
+
+.leftsidebar {
+    width: 200px;
+    background-color: whitesmoke;
+
+}
+
+.rightsidebar {
+    width: 800px;
+    background-color: rgba(250, 187, 187, 0.87)
+
+}
+
+.secondRightSidebar {    
+    width: 550px;
+    background-color: rgb(182, 182, 182);
+    margin-top: 64px;
+    position: fixed;
+}
+
+
