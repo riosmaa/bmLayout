@@ -9,7 +9,7 @@ import { MainModule } from './layouts/main/main.module';
 @NgModule({
   declarations: [
     AppComponent
-  ],  
+  ],     
   imports: [
     BrowserModule,
     AppRoutingModule,
